@@ -1,10 +1,9 @@
-package com.sapient.map;
+package com.sapient.linkedlist;
 
+import java.util.LinkedList;
+import java.util.Scanner;
 
-import java.util.*;
-
-public class Book
-{
+public class Book {
     private String name;
     private String authorname;
 
@@ -39,23 +38,18 @@ public class Book
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Map<String,String> s=new HashMap<String,String>();
+        LinkedList<Book> l = new LinkedList<Book>();
         System.out.println("Enter Book name");
         String name = sc.next();
         System.out.println("Enter Authorname");
         String authorname = sc.next();
-        s.put(name, authorname);
+        l.add(new Book(name, authorname));
 
-        System.out.println("Name\t\tAuthorname");
-        System.out.println("---------------------------------------");
-        Set<Map.Entry<String,String>> entry=s.entrySet();
-        Iterator<Map.Entry<String,String>> itr=entry.iterator();
-        while(itr.hasNext())
-        {
-            Map.Entry<String,String> e=itr.next();
-            System.out.println(e.getKey()+"\t\t"+e.getValue());
+        for (int i = 0; i < l.size(); i++) {
+
+            System.out.println("Book name is :"+l.get(i).getName());
+            System.out.println("Book Authorname is :"+l.get(i).getAuthorname());
         }
-
 
 
     }
