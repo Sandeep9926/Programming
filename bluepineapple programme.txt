@@ -1,0 +1,89 @@
+1.Print Perfect Numbers Between 1 to n.
+
+import java.util.Scanner;
+public class Perfect
+{
+        static boolean perfect(int num)
+        {
+            int sum = 0;
+            for(int i=1; i<num; i++)
+            {
+                if(num%i==0)
+                {
+                    sum = sum+i;
+                }
+            }
+            if(sum==num)
+                return true;
+            else
+                return false;
+        }
+        public static void main(String[] args)
+        {
+            Scanner obj = new Scanner (System.in);
+            System.out.println("enter the value for n");
+            int n = obj.nextInt();
+            for(int i=1; i<=n; i++)
+            {
+                if(perfect(i))
+                    System.out.println(i);
+            }
+        }
+ 
+ 
+}
+
+2.find total occurrences of each digits (0-9) using function?
+
+import java.*;
+ 
+public class GFG {
+     
+    static int getOccurence(int n, int d)
+    {
+         
+        int result = 0;
+     
+        int itr = d;
+         
+        while (itr <= 9)
+        {
+             
+            if (itr % 10 == d)
+                result++;
+     
+            if (itr != 0 && itr/10 == d)
+            {
+                 
+                result++;
+                itr++;
+            }
+     
+            else if (itr/10 == d-1)
+                itr = itr + (10 - d);
+            else
+                itr = itr + 10;
+        }
+         
+        return result;
+    }
+ 
+    public static void main (String[] args)
+    {
+        int n = 11, d = 1;
+     
+        System.out.println(getOccurence(n, d) );
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
